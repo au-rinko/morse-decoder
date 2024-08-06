@@ -41,9 +41,9 @@ function decode(expr) {
     let morse = Object.entries(MORSE_TABLE);
     const newMorse = {};
 
-    for(let key of morse){
+    for(let [key, value] of morse){
         let str = '';
-        for(let i of key[0]){
+        for(let i of key){
             if(i === '-'){
                 str += '11';
             }
@@ -57,7 +57,7 @@ function decode(expr) {
             }
         }
         
-        newMorse[str] = key[1];
+        newMorse[str] = value;
     }
     
     newMorse['**********'] = ' ';
